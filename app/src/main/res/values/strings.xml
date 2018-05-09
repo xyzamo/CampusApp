@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Question</string>
+    <string name="edit_digits">0123456789abcdefghijklmnopqrstuvwxyzAbcDfGijKnMnopqrStuvvxYZ</string>
+    <string name="title_activity_tong_fujian">TongFujianActivity</string>
+</resources>
