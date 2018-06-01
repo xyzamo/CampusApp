@@ -42,6 +42,7 @@ public class QuestionActivity extends BaseActivity {
 
     private void initView() {
         swiperefreshlayout = (SwipeRefreshLayout)findViewById(R.id.swiperefreshlayout);
+
         recyclerview = (RecyclerView)findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setItemAnimator(new DefaultItemAnimator());

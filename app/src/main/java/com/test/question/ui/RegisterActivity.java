@@ -3,6 +3,7 @@ package com.test.question.ui;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +12,7 @@ import com.test.question.R;
 import com.test.question.base.BaseActivity;
 import com.test.question.bean.Person;
 
+import cn.bmob.sms.BmobSMS;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
@@ -22,6 +24,9 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private EditText etRepwd;
     private EditText etPhone;
     private EditText etSno;
+    private EditText etSendWrite;
+    private Button mBtnSend;
+    private Button mBtnREgister;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,19 +43,32 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         etPhone = (EditText) findViewById(R.id.id_et_phone);
         etRepwd = (EditText) findViewById(R.id.id_et_repassword);
         etSno = (EditText) findViewById(R.id.id_et_sno);
-        Button mBtnREgister = (Button) findViewById(R.id.id_btn_register);
+        etSendWrite = (EditText) findViewById(R.id.id_et_writesms);
+        mBtnSend = (Button) findViewById(R.id.id_btn_sendsms);
+        mBtnREgister = (Button) findViewById(R.id.id_btn_register);
+
+        mBtnSend.setOnClickListener(this);
         mBtnREgister.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
+        Log.e("MESSAGE:", "1");
+        String name = etName.getText().toString().trim();
+        String pwd = etPwd.getText().toString().trim();
+        String phone = etPhone.getText().toString().trim();
+        String sno = etSno.getText().toString().trim();
+        String pwdAgain = etRepwd.getText().toString().trim();
         switch (v.getId()) {
+
+            case R.id.id_btn_sendsms:
+                /*if (TextUtils.getTrimmedLength(phone) != 11){
+                    onToast("请输入11位有效手机号码");
+                }else {
+                    BmobSMS.requestSMSCode(this);
+                }*/
+                    break;
             case R.id.id_btn_register:
-                String name = etName.getText().toString().trim();
-                String pwd = etPwd.getText().toString().trim();
-                String phone = etPhone.getText().toString().trim();
-                String sno = etSno.getText().toString().trim();
-                String pwdAgain = etRepwd.getText().toString().trim();
                 if (TextUtils.isEmpty(name)) {
                     onToast("用户名不能为空");
                     return;
@@ -101,7 +119,6 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                         }
                     }
                 });
-
                 break;
 
         }

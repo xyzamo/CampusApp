@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,6 +27,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private EditText etPwd;
     private TextView btLogin;
     private TextView tv_register;
+    private Button btSmsLogin;
     private LoginActivity context;
     private CheckBox remberPass;
     private SharedPreferences pref;
@@ -47,7 +49,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             etName.setText(account);
             etPwd.setText(passwo);
             remberPass.setChecked(true);
-
         }
     }
 
@@ -56,15 +57,21 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         etPwd = (EditText)findViewById(R.id.et_pwd);
         btLogin = (TextView)findViewById(R.id.bt_login);
         tv_register = (TextView)findViewById(R.id.tv_register);
+        btSmsLogin = (Button) findViewById(R.id.id_btn_loginsms);
         remberPass = (CheckBox)findViewById(R.id.rember_psd);
 
         btLogin.setOnClickListener(this);
         tv_register.setOnClickListener(this);
+        btSmsLogin.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.id_btn_loginsms:
+                //Intent intent = new Intent(this,);
+                //startActivity(intent);
+                break;
             case R.id.bt_login:
                 final String name = etName.getText().toString();
                 final String password = etPwd.getText().toString();

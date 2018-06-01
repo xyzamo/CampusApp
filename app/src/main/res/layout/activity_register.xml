@@ -24,17 +24,29 @@
         android:textColorHint="@color/color999" />
 
     <EditText
-        android:id="@+id/id_et_phone"
+        android:id="@+id/id_et_password"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="4dp"
         android:background="#ffffff"
-        android:inputType="phone"
-        android:hint="请输入手机号码"
-        android:digits="@string/edit_digits"
+        android:hint="请输入密码"
+        android:inputType="textWebPassword"
         android:maxLength="16"
         android:paddingLeft="8dp"
-        android:textColorHint="@color/color999"  />
+        android:textColorHint="@color/color999" />
+
+    <EditText
+        android:id="@+id/id_et_repassword"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="4dp"
+        android:background="#ffffff"
+        android:hint="重复输入密码"
+        android:inputType="textWebPassword"
+        android:maxLength="16"
+        android:paddingLeft="8dp"
+        android:textColorHint="@color/color999" />
+
     <EditText
         android:id="@+id/id_et_sno"
         android:layout_width="match_parent"
@@ -46,40 +58,54 @@
         android:paddingLeft="8dp"
         android:textColorHint="@color/color999"
         />
+
+
     <EditText
-        android:id="@+id/id_et_password"
+        android:id="@+id/id_et_phone"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="4dp"
         android:background="#ffffff"
-        android:hint="请输入密码"
-        android:maxLength="16"
-        android:inputType="textWebPassword"
-        android:paddingLeft="8dp"
-        android:textColorHint="@color/color999"  />
-
-    <EditText
-        android:id="@+id/id_et_repassword"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:inputType="textWebPassword"
-        android:layout_marginTop="4dp"
-        android:background="#ffffff"
-        android:hint="重复输入密码"
+        android:digits="@string/edit_digits"
+        android:hint="请输入手机号码"
+        android:inputType="phone"
         android:maxLength="16"
         android:paddingLeft="8dp"
-        android:textColorHint="@color/color999"  />
+        android:textColorHint="@color/color999" />
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/id_et_writesms"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="4dp"
+            android:background="#ffffff"
+            android:digits="@string/edit_digits"
+            android:hint="输入验证码"
+            android:inputType="phone"
+            android:maxLength="8"
+            android:paddingLeft="8dp"
+            android:textColorHint="@color/color999" />
+        <Button
+            android:id="@+id/id_btn_sendsms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="发送验证码"
+            />
+    </LinearLayout>
 
     <Button
         android:id="@+id/id_btn_register"
         android:layout_width="match_parent"
-        android:background="@drawable/btn_bg"
-        android:textColor="@color/white"
         android:layout_height="wrap_content"
-        android:text="提交"
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
-        android:layout_marginTop="50dp" />
+        android:background="@drawable/btn_bg"
+        android:text="提交"
+        android:textColor="@color/white" />
 
 </LinearLayout>
