@@ -50,7 +50,6 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
 
     }
 
-
     @Override
     public int getItemCount() {
         return mDataList.size();
@@ -59,7 +58,6 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
     //找到控件，将其初始化
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView tv_no;
-
         public ViewHolder(View itemView) {
             super(itemView);
             tv_no= (TextView) itemView.findViewById(R.id.tv_no);
